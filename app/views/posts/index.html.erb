@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1 class="font-weight-bold text-center my-2">Posts</h1>
 
-<table>
-  <thead>
+<%= link_to 'New Post', new_post_path, class: 'btn btn-success' %>
+
+<table class="table table-striped mt-2">
+  <thead class="thead-dark">
     <tr>
       <th>Title</th>
       <th>Content</th>
@@ -26,4 +28,3 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
