@@ -7,9 +7,11 @@ class PostsController < ApplicationController
     @posts = Post.all
     @post = Post.new
 
+    @posts = Post.where('title LIKE ? OR content LIKE ?', "%#{params[:q]}%", "%#{params[:q]}%") if params[:q]
+
     respond_to do |format|
-      format.html { }
-      format.js { @post }
+      format.html { @posts }
+      format.js { @posts }
     end
   end
 

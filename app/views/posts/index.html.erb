@@ -2,6 +2,14 @@
 
 <h1 class="font-weight-bold text-center my-2">Posts</h1>
 
+<h2 class="font-weight-bold">Buscador</h2>
+  <%= form_tag(root_path, method: :get, remote: true) do %>
+    <%= text_field_tag :q, nil, placeholder: 'Buscar...', class: 'form-control mb-2' %>
+    <%= submit_tag 'Buscar', class: 'btn btn-primary' %>
+  <% end %>
+
+<h2 class="font-weight-bold mt-5">Crear Nuevo Post</h2>
+
 <%= render 'form' %>
 
 <table class="table table-striped mt-2">
@@ -14,7 +22,11 @@
   </thead>
 
   <tbody id="tbody">
-      <%= render @posts %>
+    <% @posts.each do |post| %>
+      <tr id="post_<%= post.id %>">
+        <%= render post %>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
