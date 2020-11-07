@@ -11,8 +11,16 @@
     </div>
   <% end %>
 
-    <%= form.text_field :title, placeholder: 'Título...', class: 'form-control' %>
-    <%= form.text_area :content, placeholder: 'Contenido...', class: 'form-control my-2' %>
-    <%= form.submit 'Submit', class: 'btn btn-success' %>
+    <div class="form-row">
+      <div class="col">
+        <%= form.text_field :title, placeholder: 'Título...', class: 'form-control' %>
+      </div>
+      <div class="col">
+        <%= form.text_area :content, placeholder: 'Contenido...', class: 'form-control' %>
+      </div>
+      <div class="col">
+        <%= form.submit 'Submit', class: 'btn btn-success' %>
+      </div>
+    </div>
 
 <% end %>
